@@ -31,7 +31,7 @@ A full-stack Kanban board for tracking job applications. Paste a job description
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/job-tracker.git
+git clone https://github.com/Aditya-OO1/job-tracker.git
 cd job-tracker
 
 # Install backend
