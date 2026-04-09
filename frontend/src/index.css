@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background-color: #0A0A0F;
+    color: #E8E8F0;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(124, 111, 255, 0.3);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 111, 255, 0.6);
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(22, 22, 31, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .glass-hover {
+    @apply glass transition-all duration-200;
+  }
+  .glass-hover:hover {
+    background: rgba(30, 30, 42, 0.9);
+    border-color: rgba(124, 111, 255, 0.3);
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white font-display font-semibold px-5 py-2.5 rounded-xl
+           transition-all duration-200 hover:bg-accent-bright active:scale-95
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  .btn-ghost {
+    @apply text-slate-light font-body px-4 py-2 rounded-xl border border-border
+           transition-all duration-200 hover:border-accent/40 hover:text-white
+           active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full bg-ink-muted border border-border rounded-xl px-4 py-3
+           text-white placeholder-slate-light/50 font-body text-sm
+           focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/20
+           transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-xs font-display font-semibold text-slate-light uppercase tracking-widest mb-2;
+  }
+
+  .card-drag {
+    cursor: grab;
+    user-select: none;
+  }
+  .card-drag:active {
+    cursor: grabbing;
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 25%,
+      rgba(255,255,255,0.07) 50%,
+      rgba(255,255,255,0.03) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
