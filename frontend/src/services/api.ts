@@ -3,7 +3,7 @@ import { useAuthStore } from '@/store/authStore';
 import { Application, ApplicationFormData, AIParseResponse } from '@/types';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://job-tracker-sdli.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
 });
 
