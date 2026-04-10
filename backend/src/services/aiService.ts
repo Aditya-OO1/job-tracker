@@ -1,14 +1,14 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { AIParseResponse, ParsedJobData, ResumeSuggestion } from '../types';
 
-const genAI = new GoogleGenerativeAI(process.env.OPENAI_API_KEY as string);
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
 
 function generateId(): string {
   return Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
 }
 
 export async function parseJobDescription(jobDescription: string): Promise<AIParseResponse> {
-  if (!process.env.OPENAI_API_KEY) {
+  if (!process.env.GEMINI_API_KEY) {
     throw new Error('API key not configured');
   }
 
