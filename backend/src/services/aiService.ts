@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import { v4 as uuidv4 } from 'crypto';
+
 import { AIParseResponse, ParsedJobData, ResumeSuggestion } from '../types';
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
