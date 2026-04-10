@@ -107,7 +107,7 @@ export default function AddApplicationModal({ onClose, editApp }: Props) {
         await createApp.mutateAsync(form);
       }
       onClose();
-    } catch  finally {
+    } catch (_e) { } finally {
       setSaving(false);
     }
   };
