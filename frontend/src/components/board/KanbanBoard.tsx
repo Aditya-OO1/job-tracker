@@ -117,7 +117,7 @@ export default function KanbanBoard({ onCardClick, search }: Props) {
       <DragOverlay>
         {activeApp && (
           <div className="opacity-90 rotate-1 scale-105">
-            <ApplicationCard application={activeApp} onClick={() => } isDragging />
+            <ApplicationCard application={activeApp} onClick={() => {}} isDragging />
           </div>
         )}
       </DragOverlay>
