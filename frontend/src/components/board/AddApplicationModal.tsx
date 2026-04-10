@@ -117,7 +117,7 @@ export default function AddApplicationModal({ onClose, editApp }: Props) {
       await navigator.clipboard.writeText(text);
       setCopiedId(id);
       setTimeout(() => setCopiedId(null), 2000);
-    } catch {
+    } catch (_e) {
       toast.error('Could not copy to clipboard');
     }
   };
