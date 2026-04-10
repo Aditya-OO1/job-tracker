@@ -12,7 +12,7 @@ export async function parseJobDescription(jobDescription: string): Promise<AIPar
     throw new Error('API key not configured');
   }
 
-  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
 
   const parsePrompt = `Extract info from this job description and return ONLY valid JSON, no markdown:
 {"company":"","role":"","requiredSkills":[],"niceToHaveSkills":[],"seniority":"","location":""}
